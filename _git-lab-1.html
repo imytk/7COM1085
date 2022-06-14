@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dr. John Noll" />
+  <title>Project management – Git-lab</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- This works in China! -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display"  rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="one column"  style="margin-top: 25%"> -->
+      <div class="one column">
+	<!-- navigation bar someday -->
+      </div>
+
+     <!-- <div class="eleven columns" style="margin-top: 25%"> -->
+      <div class="eleven columns">
+<header id="title-block-header">
+<h1 class="title">Project management – Git-lab</h1>
+<p class="subtitle">7COM1085 – Research Methods</p>
+<p class="author">Dr. John Noll</p>
+</header>
+<h1 id="part-1-bitbucket-and-git">Part 1: Bitbucket and Git</h1>
+<ol>
+<li>Create a Bitbucket account. Sign up at www.bitbucket.org. _Note: when signing up, use your <code>herts.ac.uk</code> email account, so you can have more than five (5) members of your repository (this is necessary so you can invite members of the module team to join).</li>
+</ol>
+<p>Also, be sure you can actually read messages sent to this account, because you will have to confirm your account registration by following a link from an email message that Bitbucket will send to your <code>herts.ac.uk</code> email address.</p>
+<ol>
+<li><p>Create a new repository to experiment with Git and Bitbucket: select the “Create repository” button in the upper right corner:</p>
+<p><img src="bitbucket-create-repo.png" alt="New repo" /><br />
+</p>
+<ul>
+<li>Name your repository “sandbox” so you know it’s just for experimenting, and not for storing real artifacts.</li>
+<li>Answer ‘yes’ to “Create a README.md file?”</li>
+<li>Select the ‘Git’ radio button.</li>
+<li>Select “Create repository”</li>
+</ul>
+<p><img src="bitbucket-create-repo-dialog.png" alt="New repo" /><br />
+</p></li>
+<li><p>Install Notepad++. There is a Notepad++ package in the University of Hertfordshire Software Centre for Herts lab computers.</p>
+<p>To install on your own laptop and/or home computer, visit https://notepad-plus-plus.org/downloads/, choose the latest release #(at the top), and follow the Installer link.</p></li>
+<li><p>Install Git.<br />
+There is a Git package in the University of Hertfordshire Software Centre for Herts lab computers (if Git is not available from the Software Center, you can download the standalone executable from https://git-scm.com/download/win).</p>
+<p>To install on your own laptop and/or home computer, visit https://git-scm.com/downloads to get the download package for your architecture.</p></li>
+<li><p>Open a command window<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: click the “start” button and type “cmd”; this will open a black window with white text officially called the “Windows Command Shell.” Most people call it a “DOS Box” because it’s based on the MS-DOS<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <code>command.com</code> shell that was <em>the</em> user interface for the MS-DOS console.</p></li>
+<li><p>Not familiar with MS-DOS commands? Read the “Windows Command Prompt in 15 Minutes” tutorial (https://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html),</p>
+<p>Prefer to watch rather than read? Try this YouTube video: https://www.youtube.com/watch?v=MBBWVgE0ewk</p>
+<p>Then, use what you’ve learned to navigate to your “home” directory, create a directory called “experiments”, change to this directory, create a file there using Notepad++, then view the contents of the file using <code>more</code> and <code>type.</code></p></li>
+<li><p>Configure Git to use Notepad++ as the default editor: in your DOS Box, type:</p>
+<pre><code> git config --global core.editor &quot;&#39;C:/Program Files/Notepad++/notepad++.exe&#39; 
+ -multiInst -notabbar -nosession -noPlugin&quot;</code></pre>
+<p>If you don’t do this step, the default editor will be <em>vi</em>, which is very powerful but not easy to learn.</p></li>
+<li><p>Clone your repository.</p>
+<ol type="1">
+<li>Select ‘Repositories’ from your Bitbucket home page, then select ‘sandbox’ from the list:</li>
+</ol>
+<p><img src="bitbucket-repo-list.png" alt="Repo list" /><br />
+</p>
+<ol start="2" type="1">
+<li>Select ‘Clone’ then copy the “git clone…” string from the popup dialog box:</li>
+</ol>
+<p><img src="bitbucket-clone.png" alt="Clone" /><br />
+</p>
+<ol start="3" type="1">
+<li>Paste the “git clone…” string into your DOS Box (use <code>Ctrl-V</code>).</li>
+</ol></li>
+<li><p>Change to the directory you just created above (it should be called ‘sandbox’):</p>
+<pre><code> cd sandbox
+ dir</code></pre>
+<p>You should see <code>README.md</code> in the directory listing.</p></li>
+<li><p>Configure your Git identity: in your DOS Box, type (use YOUR_FIRST_NAME and YOUR_LAST_NAME as they appear on Canvas):</p>
+<pre><code> git config user.name &quot;YOUR_FIRST_NAME YOUR_LAST_NAME&quot;</code></pre>
+<p>git config user.email “YOUR_USERNAME@herts.ac.uk”</p>
+<p><em>It is essential that you use your Herts email address for this step, so we can score your Git commits properly.</em></p>
+<p>It is also <em>essential</em> that you do this <em>every</em> time you clone a repository; otherwise you won’t get credit for your contributions to your groups effort.</p>
+<p>It is possible to configure <code>user.name</code> and <code>user.email</code> globally, using the <code>--global</code> switch:</p>
+<pre><code> git config --global user.name &quot;YOUR_FIRST_NAME YOUR_LAST_NAME&quot;</code></pre>
+<p>git config --global user.email “YOUR_USERNAME@herts.ac.uk”</p>
+<p>This will configure your identity for <em>all</em> of your repositories.</p></li>
+<li><p>Use Notepad++ (<em>not</em> Notepad, <em>not</em> Word) to edit <em>README.md</em>: put some new text (maybe your name?) in this file and save it.</p></li>
+<li><p>Add <em>README.md</em> to the list of files staged for commit.</p>
+<pre><code> git add README.md</code></pre>
+<p>Note: Never, <em>ever</em> use <code>git add -A</code>: this will add <em>every</em> file in the directory to the next commit, including editor backup files, execution logs, etc. that you don’t want in your repository.</p></li>
+<li><p>Verify the staged commit.</p>
+<pre><code> git status</code></pre></li>
+<li><p>Commit your changes.</p>
+<pre><code> git commit</code></pre>
+<p>This should open Notepad++ with a commit log message (if not, you did not configure Git correctly when you installed it. Type ‘ESC’ then ‘q!’ and configure Notepad++ to be the Git editor; then, repeat this step.) Write a <em>meaningful</em> message for the commit log.</p></li>
+<li><p>Push your changes to Bitbucket.</p>
+<pre><code> git push origin master</code></pre></li>
+<li><p>Verify your push. Visit your Bitbucket repository’s URL; you will see the newly committed contents of your <code>README.md</code> file.</p></li>
+</ol>
+<h2 id="merge-conflicts">Merge conflicts</h2>
+<p>Merge conflicts happen when two developers make changes to the same line in the same file: Git will not know which change to keep, so it forces a human to make the decision.</p>
+<ol>
+<li><p>Clone another copy of your sandbox.</p>
+<pre><code> cd ..
+ git clone https://bitbucket.org/yourusername/sandbox.git sandbox2` </code></pre>
+<p>Note the <code>sandbox2</code> at the end of the above command string: this tells get to clone the remote repository into a directory called <code>sandbox2</code> (rather than <code>sandbox</code>); this allows you to clone multiple copies of your repository into the same parent directory. If you type <code>dir</code> you should see both <code>sandbox</code> and <code>sandbox2</code> in your working directory.</p></li>
+<li><p>Edit your original <code>README.md</code>. Open <code>README.md</code> in the <code>sandbox</code> workspace, and add a new line with random text at the top. Save these changes, then do:</p>
+<pre><code> cd sandbox
+ git add README.md
+ git commit -m &quot;Added text for conflict tutorial.&quot;</code></pre></li>
+<li><p>Edit your new <code>README.md</code>. Open <code>README.md</code> in the <code>sandbox2</code> workspace, and add a new line with different random text at the top. Save these changes, then do:</p>
+<pre><code> cd ../sandbox2
+ git add README.md
+ git commit -m &quot;Added text for conflict tutorial.&quot;
+ git push origin master</code></pre></li>
+<li><p>Create a merge conflict.</p>
+<pre><code> cd ../sandbox</code></pre>
+<p>git pull</p>
+<p>This should result in an error message, something like the following:</p>
+<pre><code> [jnoll@grindstone] ~/scratch/sandbox: git pull 
+ remote: Enumerating objects: 5, done.
+ remote: Counting objects: 100% (5/5), done.
+ remote: Total 3 (delta 0), reused 0 (delta 0)
+ Unpacking objects: 100% (3/3), 228 bytes | 228.00 KiB/s, done.
+ From https://bitbucket.org/jnoll2/sandbox
+    acf6276..ba30313  master     -&gt; origin/master
+ Auto-merging README.md
+ CONFLICT (content): Merge conflict in README.md
+ Automatic merge failed; fix conflicts and then commit the result.</code></pre></li>
+<li><p>Open your original <code>README.md</code> in Notepad++. You should see the conflict marked something like the following:</p>
+<pre><code> &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ Random text in original README.md
+ =======
+ Random text in second README.md
+ &gt;&gt;&gt;&gt;&gt;&gt;&gt; ba3031316648a9621ad658aad9380b525d01e627</code></pre>
+<p>“HEAD” refers to the current workspace, while <em>ba3031316648a9621ad658aad9380b525d01e627</em> is the commit ID from the remote workspace where the conflict occurs. You will need to choose which line to keep (or, maybe you want to keep both!), then remove the other lines.</p>
+<p>So, for example, if I want to keep the second change, I would delete lines 1, 2, 3, and 5 to yield:</p>
+<pre><code> Random text in second README.md</code></pre>
+<p>Save your changes.</p></li>
+<li><p>Commit your changes.</p>
+<pre><code>git add README.md</code></pre>
+<p>git commit -m “Resolved merge conflict.”</p></li>
+<li><p>Push your changes.</p>
+<pre><code>git pull</code></pre>
+<p>git push origin master</p></li>
+<li><p>Pull your changes into <code>sandbox2</code>.</p>
+<pre><code>cd ../sandbox2</code></pre>
+<p>git pull</p>
+<p>Now, if you open <code>README.md</code> in the <code>sandbox2</code> workspace, you should see the same contents as are in the <code>sandbox</code> workspace.</p></li>
+</ol>
+<h2 id="learn-more">Learn more</h2>
+<p>Now, follow Bitbucket’s <a href="https://confluence.atlassian.com/bitbucket/tutorial-learn-bitbucket-with-git-759857287.html">Git Tutorial</a> which provides an excellent, entertaining introduction to each of the major Git commands.</p>
+<p>Note: you should avoid branches this semester: they are a powerful but somewhat dangerous feature of Git that you won’t need.</p>
+<h1 id="part-2-trello">Part 2: Trello</h1>
+<h1 id="objectives">Objectives</h1>
+<p>The objectives for this exercise are to create and populate a Kanban board using <a href="www.trello.com">Trello</a></p>
+<h2 id="tasks">Tasks</h2>
+<ol>
+<li><p>Clone the bitbucket repository:</p>
+<p><code>git clone https://bitbucket.org/jnoll2/kanban-lab.git</code></p></li>
+<li><p>Follow the instructions in the <em>README.md</em> file of the repository.</p></li>
+</ol>
+<h1 id="some-resources">Some resources</h1>
+<ul>
+<li><a href="https://devblogs.microsoft.com/commandline/windows-command-line-backgrounder/">Background on shells and cmd.exe</a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>You can use PowerShell or Git Bash if you are familiar with these.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>“MS-DOS” (Microsoft Disk Operating System) was the first operating system sold by Microsoft, for the IBM PC.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
